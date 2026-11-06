@@ -1,0 +1,12 @@
+{
+  "domain": "bookorbit",
+  "name": "BookOrbit",
+  "codeowners": ["@tingtom"],
+  "config_flow": true,
+  "documentation": "https://github.com/tingtom/bookorbit-ha",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/tingtom/bookorbit-ha/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
