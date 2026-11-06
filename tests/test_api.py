@@ -1,5 +1,3 @@
-"""Functional test for the BookOrbit HA integration API client (no HA needed)."""
-
 """Tests for the BookOrbit API client (runs against a fake BookOrbit server)."""
 
 import asyncio
@@ -7,11 +5,14 @@ import importlib
 import sys
 import types
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 
 # Load api.py as part of a stub package: the real package __init__ imports
-# homeassistant, which is not installed in this test environment.
+# homeassistant, which is not needed for these client tests.
 _PKG = types.ModuleType("bookorbit")
-_PKG.__path__ = ["/root/projects/bookorbit-ha/custom_components/bookorbit"]
+_PKG.__path__ = [
+    str(Path(__file__).resolve().parent.parent / "custom_components" / "bookorbit")
+]
 sys.modules["bookorbit"] = _PKG
 bookorbit_api = importlib.import_module("bookorbit.api")
 
