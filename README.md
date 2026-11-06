@@ -126,7 +126,7 @@ automation:
 
 ```bash
 python -m venv .venv
-.venv/bin/pip install pytest pytest-homeassistant-custom-component ruff
+.venv/bin/pip install -r requirements_test.txt
 .venv/bin/ruff check custom_components tests conftest.py
 .venv/bin/pytest -q
 ```
